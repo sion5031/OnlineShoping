@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Administrator.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="Order.h" />

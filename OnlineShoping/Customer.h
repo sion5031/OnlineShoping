@@ -30,5 +30,8 @@ public:
 	void CancleOrder(int SN);
 	int GetOrderSize();
 	shared_ptr<Order> GetOrder(int SN);
+
+	void ProceedOrder();
+
 	void PrintOrders();
 };

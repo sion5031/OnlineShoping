@@ -49,7 +49,7 @@ void Order::InitOrderState()
 
 void Order::ProceedOrderState()//¸â¹öÇÔ¼ö?
 {
-	if (0 <= orderState < 2)
+	if (orderState >= 0 && orderState < 2)
 	{
 		this->orderState++;
 	}

@@ -5,7 +5,6 @@
 #include "Customer.h"
 #include "Order.h"
 #include "Product.h"
-#include "Administrator.h"
 
 
 void Print(string str);
@@ -99,6 +98,8 @@ int main()
 						newOrder->SetOProduct(server->FindProduct(orderNum));//예외처리
 						newOrder->SetOrderNum(customerPtr->GetOrderSize());
 
+
+						customerPtr->ProceedOrder();
 						customerPtr->AddOrder(newOrder);
 
 						LPrintL("주문이 완료되었습니다.");

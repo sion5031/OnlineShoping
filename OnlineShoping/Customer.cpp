@@ -70,6 +70,14 @@ shared_ptr<Order> Customer::GetOrder(int SN)
 	}
 }
 
+void Customer::ProceedOrder()
+{
+	for (int i = 0;i < orders->size();i++)
+	{
+		orders->at(i)->ProceedOrderState();
+	}
+}
+
 void Customer::PrintOrders()
 {
 	cout << "주문번호" << '\t' << "상품명" << '\t' << "주문일자" << '\t' << "주문상태" << endl;
@@ -82,7 +90,14 @@ void Customer::PrintOrders()
 		cout << orders->at(i)->GetOrderDate()->tm_mon << '.';
 		cout.width(2);
 		cout.fill('0');
-		cout << orders->at(i)->GetOrderDate()->tm_wday << '\t' << orders->at(i)->GetOrderState() << endl;
+		cout << orders->at(i)->GetOrderDate()->tm_wday << ' ';
+		cout.width(2);
+		cout.fill('0');
+		cout << orders->at(i)->GetOrderDate()->tm_hour << ':';
+		cout.width(2);
+		cout.fill('0');
+		cout << orders->at(i)->GetOrderDate()->tm_min;
+		cout << '\t' << orders->at(i)->GetOrderState() << endl;
 	}
 }
 
